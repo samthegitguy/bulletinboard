@@ -1,0 +1,22 @@
+on:
+    # Trigger the workflow on push or pull request,
+    # but only for the master branch
+    push:
+      branches:
+        - master
+    pull_request:
+      branches:
+        - master
+    # Also trigger on page_build, as well as release created events
+    page_build:
+jobs:
+    docker:
+        name: Docker
+        runs-on: ubuntu-latest
+        steps:
+            - name: Create standard docker image
+            run: |
+                npm ci --only=production
+                docker build -t samthegitguy/bulletinboard -f Dockerfile . 
+            - name: Create lite docker image
+            run: docker build -t samthegitguy/bulletinboard -f Dockerfile-lite .
