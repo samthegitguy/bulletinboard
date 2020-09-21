@@ -14,9 +14,7 @@ jobs:
         name: Docker
         runs-on: ubuntu-latest
         steps:
-            - name: Create standard docker image
-            run: |
-                npm ci --only=production
-                docker build -t samthegitguy/bulletinboard -f Dockerfile . 
-            - name: Create lite docker image
-            run: docker build -t samthegitguy/bulletinboard -f Dockerfile-lite .
+            - run: |
+                    npm ci --only=production
+                    docker build -t samthegitguy/bulletinboard -f Dockerfile . 
+            - run: docker build -t samthegitguy/bulletinboard -f Dockerfile-lite .
