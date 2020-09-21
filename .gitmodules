@@ -1,6 +1,0 @@
-[submodule "bulletinboard-backend"]
-	path = bulletinboard-backend
-	url = https://github.com/samthegitguy/bulletinboard-backend
-[submodule "bulletinboard-frontend"]
-	path = bulletinboard-frontend
-	url = https://github.com/samthegitguy/bulletinboard-frontend
