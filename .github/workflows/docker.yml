@@ -16,9 +16,8 @@ jobs:
     steps:
         - name: Check out the repo
           uses: actions/checkout@v2
-        - uses: docker/build-push-action@v1.1.1
-          with:
-            username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
-            registry: docker.pkg.github.com
-            repository: samthegitguy/bulletinboard/server
+          
+        - run: |
+            cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u samthegitguy --password-stdin
+            docker tag IMAGE_ID docker.pkg.github.com/samthegitguy/bulletinboard/IMAGE_NAME:VERSION
+            docker push docker.pkg.github.com/samthegitguy/bulletinboard/IMAGE_NAME:VERSION
