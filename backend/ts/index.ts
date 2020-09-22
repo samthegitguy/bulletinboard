@@ -13,7 +13,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see https://github.com/samthegitguy/bulletinboard/blob/master/LICENSE
  */
-
+let test = 'test'
 const fs = require('fs');
 const logjs = require('logjs');
 const logger = new logjs.logger('default');
