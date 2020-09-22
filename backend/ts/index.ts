@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+
 /*
 Node.js server which allows chat between anonymous users
 Copyright (C) 2020 samthegitguy
